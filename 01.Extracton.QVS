@@ -39,8 +39,8 @@ INVOICES:
 SQL SELECT InvoiceAmount,
     InvoiceDate,
     InvoiceID,
-    OrderID,
-    PaymentDate
+    OrderID AS ORDER_ID,
+    PaymentDate AS Date_Reference
 FROM invoices;
 //-------- End Multiple Select Statements ------
 
