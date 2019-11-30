@@ -1,0 +1,48 @@
+
+TRACE Load of Customer Masterdata;
+
+//-------- Start Multiple Select Statements ------
+
+
+CUSTOMERS:
+SQL SELECT Address,
+    City,
+    CompanyName,
+    ContactName,
+    Country,
+    CustomerID,
+    DivisionID,
+    Fax,
+    Phone,
+    PostalCode,
+    StateProvince
+FROM customers;
+STORE CUSTOMERS INTO [C:\Users\Adithya\Desktop\QlikReport - Demo GIT\Sales Report\QVD\01 Extraction\Customer_MasterData.QVD](QVD);
+
+DROP TABLE CUSTOMERS;
+
+//Customer MasterData Loaded 
+TRACE End of Customer Masterdata Load ;
+
+//Load of Division MasterData
+DIVISIONS:
+SQL SELECT DivID,
+    DivName
+FROM divisions;
+
+STORE DIVISIONS INTO [C:\Users\Adithya\Desktop\QlikReport - Demo GIT\Sales Report\QVD\01 Extraction\Division_MasterData.QVD](QVD);
+DROP TABLE DIVISIONS;
+
+//Load of Transactional Division_MasterData
+
+INVOICES:
+SQL SELECT InvoiceAmount,
+    InvoiceDate,
+    InvoiceID,
+    OrderID,
+    PaymentDate
+FROM invoices;
+//-------- End Multiple Select Statements ------
+
+STORE INVOICES INTO [C:\Users\Adithya\Desktop\QlikReport - Demo GIT\Sales Report\QVD\01 Extraction\Invoices.QVD](QVD);
+DROP TABLE INVOICES;
